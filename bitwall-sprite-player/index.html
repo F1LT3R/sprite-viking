@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="js/CubicVR/CubicVR.js" type="text/javascript"></script>
+  <script src="js/CubicVR-bitmap_cube_array.js" type="text/javascript"></script>
+  <script src="js/CubicVR-bitwall.js" type="text/javascript"></script>
+  <script src="js/sprite-viking-blitr.js"></script>
+  <script src="GLInit.js"></script>
+  <script src="js/burst-core.js"></script>
+
+<script>  
+  function run(){
+  
+    bitWall.addSprites([
+      'sprites/kraddy2.sprite'
+    ]);
+    
+    var kraddySprite = bitWall.kraddy2; // (Path and file-extensions characters are removed from the sprite URI to form the sprite-name)
+    kraddySprite.action = 'walk';
+  
+    var myContainer = new CubicVR.SceneObject();
+	  myContainer.bindChild( kraddySprite.sceneObject );	  
+	  myContainer.position = [0,0,0];
+	  kraddySprite.sceneObject.rotation = [0,0,0];  // sprite control local to container
+	  kraddySprite.sceneObject.scale = [2,2,2];  // sprite control local to container
+    scene_test.bindSceneObject( myContainer );
+    
+    //kraddySprite.sceneObject.scale[2] = 2;
+    
+    burst.timeline( 'kraddyActions', 0, 141, 2, false )
+        
+      .obj( 'extrude', kraddySprite.sceneObject )
+        .track( 'scale' )
+          .key( 90, [ 2, 2, 2 ] )
+          .key( 100, [ 2, 2, 80 ], 'outBounce' )
+          .key( 140, [ 2, 2, 2 ] )
+   
+      .obj( 'container', myContainer )
+        .track( 'position' )
+          .key(    0, [ 0, 0, 0] )
+          .key(   49, [ 2, 0, 0] )          
+          .key(   60, [ 2.5, 1, 0] )
+          .key(   70, [ 2.5, 0, 0] )
+          .key(  80, [ 3, 0, 0] )  
+      
+      .obj( 'action', kraddySprite )
+        .track( 'action' )
+          .key(   0, 'walk' )
+          .key(  50, 'jump' )
+          .key(  70, 'walk' )
+          .key(  75, 'kick' )
+          .key( 100, 'kick' )
+    ;
+    
+    burst.load( 'kraddyActions' );
+    burst.play();
+    
+  };
+  
+  document.addEventListener( 'DOMContentLoaded', function(){ run(); }, false );
+  
+</script>
+  
+</head>
+
+<body style='margin:0px;overflow:hidden;'>
+  <canvas id="output1" width="42" height="42"></canvas>
+  <canvas id="output2" width="42" height="42"></canvas>
+</body>
+
+</html>
+

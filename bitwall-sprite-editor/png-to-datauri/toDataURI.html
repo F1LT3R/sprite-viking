@@ -1,0 +1,20 @@
+<canvas id="grab" style="border:1px solid black"></canvas>
+
+<script>
+  var imageToConvert = 'kraddy.png',
+      
+      a = new Image(),
+      b = document.getElementById('grab'),
+      c = b.getContext('2d')
+      ;
+      
+  a.onload = function(){
+    b.width = this.width;
+    b.height = this.height;
+    c.drawImage(this, 0, 0);
+    document.write( b.toDataURL('image/png') );
+  };
+
+  a.src = imageToConvert;
+  
+</script>

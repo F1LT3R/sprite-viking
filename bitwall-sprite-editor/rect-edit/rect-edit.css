@@ -1,0 +1,69 @@
+  body{
+    margin:0;
+    padding:10px;
+    background:#FFF;
+    font-family:courier, "courier new", monospace;
+  }
+
+  #ui-container{
+    width: 782px;
+  }
+
+  h2{
+    margin:0px;
+    padding:4px 5px 2px 0;
+    font-size:12px;
+    font-weight:normal;
+    height:16px;
+    overflow:hidden;
+    position:absolute;
+    color:#000;
+    text-shadow: 1px 1px 0px #FFF;
+    text-align:right;
+    width:203px;
+    top:200px;
+    border:1px solid #FFF;
+    box-shadow: 0px 0px 1px #000;
+    background: -moz-linear-gradient(100% 100% 90deg, rgba(64,64,64,.75), rgba(255,255,255,.95));
+    opacity:0.8;
+  }
+
+  h2:hover{
+    opacity:0;
+  }
+
+  .canvasArea{
+    float:left;
+    display:block;
+    margin:0;
+    padding:4px 5px 0 0;
+  }
+
+  .canvasArea.spriteSheet{
+    width: 520px;
+    display:auto;
+  }
+
+  .canvasArea.spriteSheet h2{
+    width: 505px;
+    top: 503px;
+  }
+
+  canvas{
+    margin: 0 10px 10px 0;
+/*
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.333);
+*/
+    background: url(../img/checker-dark.gif);
+  }
+
+  #sheet{
+    float: left;
+  }
+
+  #rect{
+  }
+
+  #preview{
+    display:block;
+  }

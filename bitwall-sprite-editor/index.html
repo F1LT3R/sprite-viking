@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Sprite-Viking Editor</title>
+
+  <link type="text/css" href="css/Aristo/jquery-ui-1.8.5.custom.css" rel="stylesheet" />	
+
+  <script>
+  var log = (console && console.log) ? function(msg) { console.log("CubicVR Log: " + msg); } : function() {};
+  </script>
+
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/jquery.ui.js" type="text/javascript"></script>
+  <script src="js/CubicVR/CubicVR.js" type="text/javascript"></script>
+  <script src="js/CubicVR-bitmap_cube_array.js" type="text/javascript"></script>
+  <script src="js/CubicVR-bitwall.js" type="text/javascript"></script>
+  <script src="js/sprite-viking-blitr.js"></script>
+  <script src="js/sprite-viking-control.js"></script>
+  
+</head>
+
+<body style='margin:0px;overflow:hidden;'>
+
+<div id="rect-editor"></div>
+
+<div id="controls">
+
+  <div class="character-control">
+    <canvas id="output" width="64" height="64"></canvas>
+    <div class="action-ops">
+      <button title="New Action" id="newAction"><img src="img/plus.png" /></button>
+      <button title="Delete Action" id="deleteAction"><img src="img/trash_16x16.gif" /></button>
+      <button title="Previous" id="previous"><img src="img/previous.png" /></button>
+      <button title="Play/Pause" id="play-pause"><img src="img/player_pause.png" /></button>
+      <button title="Next" id="next"><img src="img/next.png" /></button>
+    </div>
+	  <select id="character"></select>
+    <select id="action"></select>
+  </div>
+
+	<div class="slides">
+    <div id="action-timeline">
+      <div id="action-slideDiv">
+	      <ul id="action-frames"></ul>
+	    </div>
+    </div>
+    <div class="frame-ops">
+      <button id="newFrame" title="New Frame"><img src="img/plus.png" /></button>
+      <button id="deleteFrame" title="Delete Frame"><img src="img/trash_16x16.gif" /></button>
+      <button id="editFrame" title="Edit Frame"><img src="img/layer-resize.png" /></button>
+    </div>
+    <div id="time-ops" class="block">
+      <div class="label">Frame: <input class="slider" name="frame" value="0"/></div>
+      <div class="frame" class="slider"></div>
+      <div class="clear"></div><br />
+      <div class="label">Speed: <input name="speed" value="0.5"/></div>
+      <div id="mspf" class="slider"></div>
+    </div>
+  </div>
+
+	<div class="accordion">
+		<div>
+			<h3><a href="#" id="accordianSelectedAction">Selected Action</a></h3>
+		</div>
+
+		<div>
+			<h3><a href="#">Meta Data</a></h3>
+			<div class="input-column">
+			  <label for="sprite-name">Name <input type="text" name="sprite-name"></label>
+			  <label for="sprite-author">Author <input type="text" name="sprite-author"></label>
+			  <label for="sprite-website">Website <input type="text" name="sprite-website"></label>
+			  <label for="sprite-notes">Notes <textarea type="text" name="sprite-notes" class="textarea">abc..</textarea></label>
+			  <label for="sprite-datauri">DataURI <textarea type="text" name="sprite-datauri" class="textarea">abc..</textarea></label>
+  	  </div>
+		</div>
+
+		<div>
+			<h3><a href="#">Help</a></h3>
+			<div class="biggify">
+        
+        <h2>Sprite-Viking-Editor 0.1-ish</h2>
+        <h4>An HTML5 sprite cutting tool by <a href="http://twitter.com/F1LT3R">F1lT3R</a></h4>        
+        <p>Sprite-Viking was created to aid the development of The Mozilla
+        Firefox4 Music Video. Sprite-Viking uses Charles Cliffe's Cubic-VR 3D
+        engine, jQuery & jQuery UI to take care of business.</p>
+        
+        <p>There will probably be some documentation for this tool some day. 
+        Until that day, bug F1LT3R on <a href="irc://irc.mozilla.org/audio">irc://irc.mozilla.org/audio</a>
+        if you need help with Sprite-Viking.</p>
+  	  </div>
+		</div>
+		<br />
+
+    <button id="preview-json">Give me the JSON</button>
+		
+	  <div id="imgView">
+		  <b>Update Sprite</b> by dragging .png file here from your desktop.
+	  </div>
+
+	  <div id="buttons">
+	  </div>
+	</div>
+
+</div>
+
+  <div id="newActionName">
+    <div class="input-column">
+	    <label for="action-name">Action Name: <input id="newActionNameInput" type="text" name="action-name"></label>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+  <link type="text/css" href="css/bitwall-sprite-editor.css" rel="stylesheet" />	

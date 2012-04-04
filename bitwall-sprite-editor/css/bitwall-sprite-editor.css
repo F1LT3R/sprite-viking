@@ -1,0 +1,242 @@
+body{background:url(../img/checker-dark.gif);}
+
+.clear{clear:left;}
+
+#newActionName{display:none;}
+
+.sprite-rects{height:200px;overflow:hidden;scroll:vertical;}
+
+#debug{
+  border:2px solid red;
+  position:absolute;
+  width:640px;
+  height:480px;
+  z-index:1000;
+  left:0;
+}
+
+#output{border:1px solid #000;background:url(../img/checker-dark.gif);float:left;margin-right:10px;}
+
+#character,
+#action{
+  font-size:1.2em;
+}
+
+.character-control{margin:5px 0 15px 0px;}
+
+.action-ops button,
+.frame-ops button{
+  height:34px!important;
+  width:38px!important;
+  padding:2px 0 0px 0!important;
+  margin:0 0 3px 0;
+}
+.action-ops button img,
+.frame-ops button img{
+  width:22px;
+  height:22px;
+}
+
+
+#rect-editor{
+  position:relative;
+  padding:0;
+  margin:0;
+  width:782px!important;
+  height:538px!important;
+  overflow:hidden!important;
+}
+
+#rect-editor iframe{
+  width:800px!important;
+  height:540px!important;
+  border:none;  
+  overflow:hidden!important;
+}
+
+
+
+#mspf{margin-top:8px;}
+
+.slides input{border:1px solid #888;font-weight:bold;background:#eee;float:right;}
+
+#imgView{border:6px dashed #0C0;padding:10px 10px 30px 74px;background:#040 url(../img/application-x-kgetlist.png) 1px 3px no-repeat;color:#FFF;margin:10px 0;}
+
+.dragover{border:6px dashed #0F0!important;background:#080 url(../img/application-x-kgetlist.png) 1px 3px no-repeat!important}
+
+.input-column label{
+  text-align:right;
+  display:block;
+  clear:both;
+  margin-top:8px;
+}
+
+.input-column label input{
+  width:265px;
+  float:right;
+  margin-left:10px;
+}
+
+.input-column label{      
+  text-align:right;
+  display:block;
+  clear:both;
+  margin-bottom:12px;
+}
+
+
+.input-column .textarea{
+  float:right;
+  width:265px;
+  margin-left:10px;      
+  margin-bottom:5px;
+}
+
+/*
+button.key-binding{padding:0!important;vertical-align:top;width:26px;height:24px;}
+*/
+
+.sprite-rects button{height:32px;}
+.rect-controls{margin-top:2px;}
+.rect-index{width:34px;font-family:Lucida, Console, Terminal,System,MonoSpace;font-size:16px;float:left;text-align:center;margin:0 5px 0 0;padding:0;vertical-align:center;}
+
+.rect-selected{
+  background:#AAA;
+  background:  -moz-linear-gradient(100% 100% 90deg, rgba(128,164,128,.7), rgba(255,255,255,1) );
+  border:0.5px solid #480;
+  border-radius:3px;
+  color:#FFF;
+  text-shadow: #480 0em 0em 0.4em;
+  font-size:18px!important;
+  font-weight:bold; 
+}
+
+.rect-shared-buttons{
+  background:#AAA;
+  background:  -moz-linear-gradient(100% 100% 90deg, rgba(128,164,128,.7), rgba(192,212,192,1) );
+  position:fixed;margin:0;passing:0;width:244px;margin:-10px 0 0 -23px;padding:5px;
+  border:0.5px solid #575;
+  border-radius:3px;
+}
+
+.vert-space64{height:64px;display:block;}
+
+.rect{border:1px solid #888;border-radius:3px;padding:5px;
+    background: -moz-linear-gradient(100% 100% 90deg, #AAA, #FFF);
+    margin-bottom:5px;
+}
+.rect canvas{border:1px solid #555;background:url(../img/checker-dark.gif);vertical-align:top;float:left;margin-right:5px;vertical-align:center;}
+.rect input{width:22px;margin:0 2px 5px 0;border:1px solid #555;}
+h2{border:0;margin:0;font-size:115%;margin:10px 0 5px 0;color:#777}
+
+
+
+.block button{
+  border:none;
+  background:none;
+  margin:5px -7px 0 0;
+  padding:0;
+}
+
+#time-ops button:hover, 
+#time-ops button:focus{
+
+}
+
+.block .label{
+  font-size:12px;
+  margin-bottom:15px;
+  vertical-align:middle;
+}
+
+.block button img{
+  width:24px;
+  height:24px;
+  margin:0;
+  padding:0;
+}
+
+
+.block{
+  padding:10px;
+  margin:0 0 10px 0;
+  background: #EEE;
+  border:1px solid #888;
+  border-radius:6px;
+  background: -moz-linear-gradient(100% 100% 90deg, rgba(128,128,128,0.2), rgba(255,255,255,1));
+  
+}
+
+.block .frame{
+
+}
+
+input.slider{
+  margin-bottom:15px;
+}
+
+
+#action-timeline{
+  background:#AAA;
+  background: -moz-linear-gradient(100% 100% 90deg, rgba(128,128,128,0.4), rgba(255,255,255,1));
+  margin:0 0 10px 0;
+  padding:0 3px;
+  border:1px solid #888;
+  height:93px;
+  overflow-y:hidden;
+  overflow-x:scroll;
+}
+
+#action-slideDiv{
+  height:173px!important;
+  position:relative;
+  width:10000px!important;
+}
+
+#action-frames{
+/*  2000px!important;*/
+  position:absolute;
+  margin:0;
+  padding:0;
+}
+
+#action-frames li{
+  margin:0;
+  padding:0;
+  float:left;
+  display:block;
+}
+
+#action-frames li canvas{
+  border:3px solid #000;
+  background:url(../img/checker-dark.gif);
+  vertical-align:top;
+  float:left;
+  margin:5px 3px 5px 3px;
+}
+
+.playingFrame{
+  border:3px solid #0AF!important;
+  position:relative;
+  margin:2px 3px 5px 2px!important;
+  box-shadow: #555 6px 6px 6px;
+}
+
+#action-frames li canvas:hover,#action-frames li canvas:focus{
+  cursor:pointer;
+  border:3px solid #AF0!important;
+  position:relative;
+  margin:2px 3px 5px 2px!important;
+  box-shadow: #555 6px 6px 6px;
+}
+
+.biggify{
+  /*
+  font-size:1em!important;
+  */
+}
+.biggify h2, .biggify h4{color:black!important;margin:0!important;padding:0!important;}
+.biggify p{
+  /*text-align:justify;*/
+  line-height:1em;
+}
